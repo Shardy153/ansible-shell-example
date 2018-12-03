@@ -1,8 +1,8 @@
-its: 1 been: 1 almot: 1 week: 1
-its: 2 been: 1 almot: 1 week: 1 bin: 1 almost: 1 weak: 1
-its: 3 been: 2 almot: 1 week: 2 bin: 1 almost: 2 weak: 1
-its: 4 been: 2 almot: 1 week: 3 bin: 1 almost: 3 weak: 1 bean: 1
-its: 5 been: 3 almot: 1 week: 4 bin: 1 almost: 4 weak: 1 bean: 1
-its: 6 been: 4 almot: 1 week: 4 bin: 1 almost: 5 weak: 2 bean: 1
-its: 7 been: 5 almot: 1 week: 5 bin: 1 almost: 6 weak: 2 bean: 1
+its: 1 been: 1 almot: 1 week: 1 
+its: 2 been: 1 almot: 1 week: 1 bin: 1 almost: 1 weak: 1 
+its: 3 been: 2 almot: 1 week: 2 bin: 1 almost: 2 weak: 1 
+its: 4 been: 2 almot: 1 week: 3 bin: 1 almost: 3 weak: 1 bean: 1 
+its: 5 been: 3 almot: 1 week: 4 bin: 1 almost: 4 weak: 1 bean: 1 
+its: 6 been: 4 almot: 1 week: 4 bin: 1 almost: 5 weak: 2 bean: 1 
+its: 7 been: 5 almot: 1 week: 5 bin: 1 almost: 6 weak: 2 bean: 1 
 Exited
