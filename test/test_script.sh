@@ -1,5 +1,5 @@
 #!bin/bash
-bash ../roles/deploy/files/counter < input.txt > output.txt &
+bash ../ansible/roles/deploy/files/counter < input.txt > output.txt &
 #Storing PID of child process
 PID=$!
 sleep 0.5
