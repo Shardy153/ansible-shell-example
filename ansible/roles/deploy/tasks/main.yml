@@ -1,0 +1,21 @@
+- name: Copy shell script to specified path.
+  copy:
+    src: files/counter
+    dest: "{{ destination_path}}/"
+    mode: "555"
+
+- name: Create new file to redirect logs of the shell script to the specified log file.
+  copy:
+    src: files/tape.conf
+    dest: /etc/rsyslog.d/tape.conf
+
+- name: Restart rsyslog service to reflect the changes
+  systemd:
+    name: rsyslog
+    state: restarted
+
+- name: Update path variable in bash_profile file
+  lineinfile:
+    path: ~/.bash_profile
+    line: "PATH=$PATH:{{ destination_path }}"
+    insertbefore: "export PATH"

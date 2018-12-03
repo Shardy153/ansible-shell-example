@@ -1,0 +1,54 @@
+#!/bin/bash
+
+filename="count.txt"
+touch ${filename}
+uid=`id -u`
+end()
+{
+  logger -t counter "${uid} - exited."
+  echo "Exited"
+  rm -f ${filename}
+  exit 0
+}
+
+trap end SIGINT
+trap end SIGHUP
+trap end SIGTERM
+trap end SIGKILL
+
+data_processor()
+{
+  n=${1}
+  read -a inp
+  logger -t counter "${uid} - entered input: ${inp[*]}"
+  if [ ${#inp} -eq 0 ]
+  then
+    return
+  fi
+  for i in "${inp[@]}"
+  do
+    i=`echo $i | sed 's/[^0-9A-Za-z]*//g'`
+    i=${i,,}
+    if [ ${#i} -ge $n ]
+    then
+      count=`cat "${filename}" | grep $i | wc -l`
+      if [ $count -eq 1 ]
+      then
+        prev_count=`cat "${filename}" | grep "$i" | awk ' {print $2}'`
+        new_count=$(( $prev_count + 1 ))
+        sed -i "s/$i: $prev_count/$i: $new_count/g" ${filename}
+      else
+        echo "$i: 1" >> ${filename}
+      fi
+    fi
+  done
+  cat ${filename} | tr '\n' ' '
+  echo
+  unset inp
+}
+
+while true
+do
+  logger -t counter "${uid} - started shell"
+  data_processor 3
+done
