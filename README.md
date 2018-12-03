@@ -23,10 +23,12 @@ This is a simple ansible playbook which copies a shell script as a path executab
 ## Run
 - Run below command:
     ```sh
+    $ cd ansible
     $ ansible-playbook -i hosts main.yml
     ```
 - Logs will be displayed on the controller machine and we can even run the above command with high verbosity to check detailed logs which is done using -v option
     ```sh
+    $ cd ansible
     $ ansible-playbook -i hosts main.yml -v
     ```
     Note: You can increase or decrease verbosity level by increasing or decreasing the ‘v’
